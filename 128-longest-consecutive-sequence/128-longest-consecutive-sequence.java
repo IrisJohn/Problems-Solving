@@ -5,23 +5,23 @@ class Solution {
             hashSet.add(num);
         }
 
-        int longestStreak = 0;
+        int l = 0;
 
         for (int num: nums) {
             if (!hashSet.contains(num - 1)) {
-                int currentNum = num;
-                int currentStreak = 1;
+                int c = num;
+                int ck = 1;
 
-                while (hashSet.contains(currentNum + 1)) {
-                    currentNum += 1;
-                    currentStreak += 1;
+                while (hashSet.contains(c + 1)) {
+                    c += 1;
+                    ck += 1;
                 }
 
-                longestStreak = Math.max(longestStreak, currentStreak);
+                l = Math.max(l, ck);
             }
         }
 
-        return longestStreak;
+        return l;
         
     }
 }
